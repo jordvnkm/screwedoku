@@ -1,4 +1,5 @@
 require_relative "tile"
+require 'byebug'
 
 class Board
   attr_reader :grid
@@ -50,7 +51,15 @@ class Board
     grid.size
   end
 
-  alias_method :rows, :size
+  # alias_method :rows, :size
+  def rows
+    answer = []
+    @grid.each do |row|
+      answer << row
+    end
+
+    answer
+  end
 
   def solved?
     rows.all? { |row| solved_set?(row) } &&
