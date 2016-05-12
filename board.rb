@@ -7,7 +7,7 @@ class Board
     end
   end
 
-  def self.from_file(filename)
+  def self.from_file(filename = "puzzles/sudoku1.txt")
     rows = File.readlines(filename).map(&:chomp)
     tiles = rows.map do |row|
       nums = row.split("").map { |char| Integer(char) }
