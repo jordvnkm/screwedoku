@@ -83,3 +83,7 @@ class Board
   private
   attr_reader :grid
 end
+
+if __FILE__ == $PROGRAM_NAME
+  p "HELLO"
+end
