@@ -1,3 +1,5 @@
+require "colorize"
+require "byebug"
 class Board
   def self.empty_grid
     Array.new(9) do
@@ -82,6 +84,17 @@ class Board
   attr_reader :grid
 end
 
+class String
+  def blue;           "\e[34m#{self}\e[0m" end
+  def red;            "\e[31m#{self}\e[0m" end
+  def colorize(color)
+    return red if color == :red
+    return blue if color == :blue
+
+  end
+end
+
+
 class Tile
   attr_reader :value
 
@@ -99,7 +112,11 @@ class Tile
   end
 
   def to_s
+    #p "hello".colorize(:red)
+    x = value.to_s.colorize(color)
+
     value == 0 ? " " : value.to_s.colorize(color)
+
   end
 
   def value=(new_value)
@@ -109,6 +126,7 @@ class Tile
       @value = new_value
     end
   end
+end
 
 class SudokuGame
   def self.from_file(filename)
