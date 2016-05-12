@@ -10,7 +10,6 @@ TAs: If you're zipping up this project, run the pull_and_create.sh script to zip
 If you want to update the README or affect all the levels, commit your changes on master and then run the `update.sh` script.  For example `update.sh Gemfile`.
 
 Then run the pull_all_branches_and_zip.sh to make a new zipfile out of the project for students.
->>>>>>> master
 
 
 ## Copyright
